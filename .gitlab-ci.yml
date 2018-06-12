@@ -1,0 +1,6 @@
+before_script:
+  - cpan -T Password::Policy LWP Digest::SHA Test::Exception Test::Kwalitee LWP::Protocol::https
+
+default:
+  script: 
+    - perl Makefile.PL && make && prove -b t xt/*
