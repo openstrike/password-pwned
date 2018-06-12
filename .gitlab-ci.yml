@@ -3,4 +3,4 @@ before_script:
 
 default:
   script: 
-    - perl Makefile.PL && make && prove -b t xt/*
+    - perl Makefile.PL && make && make manifest && prove -b t xt/*

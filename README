@@ -1,0 +1,60 @@
+
+Password::Policy::Rule::Pwned version 0.00
+
+Released: Xth June 2018
+
+
+INSTALLATION
+------------
+
+To install this module you can follow the usual procedure which is:
+
+	perl Makefile.PL
+	make
+	make test
+	make install
+
+If you have the CPAN module installed then you can install the module
+from the command line like so:
+
+	$ cpan Password::Policy::Rule::Pwned
+
+
+DESCRIPTION
+-----------
+
+Password::Policy::Rule::Pwned is a rule to extend Password::Policy to
+allow the checking of potential passwords against the list of known
+pwned passwords at https://api.pwnedpasswords.com/range/
+
+This is currently alpha quality software and its interface is subject to
+change.
+
+
+NEW SINCE LAST VERSION
+----------------------
+
+This is the first version.
+
+See the Changes file for a complete history.
+
+
+DOCUMENTATION
+-------------
+
+All of the documentation is in POD format in the module source. Once the
+module has been installed you can use
+
+	perldoc Password::Policy::Rule::Pwned
+
+to read it. Alternatively, you can view the man page with
+
+	man Password::Policy::Rule::Pwned
+
+
+COPYRIGHT
+---------
+
+This software is copyright (c) 2018 by Pete Houston. It is released
+under the Artistic Licence (version 2) and the GNU General Public Licence
+(version 2).
