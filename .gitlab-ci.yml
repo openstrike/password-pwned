@@ -1,5 +1,5 @@
 before_script:
-  - cpan -T Password::Policy LWP Digest::SHA Test::Exception Test::Kwalitee LWP::Protocol::https
+  - cpan -T Password::Policy LWP Digest::SHA Test::Exception Test::Kwalitee Test::Vars LWP::Protocol::https
 
 default:
   script: 
