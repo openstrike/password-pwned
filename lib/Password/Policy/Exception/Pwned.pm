@@ -10,7 +10,7 @@
 #        NOTES: ---
 #       AUTHOR: Pete Houston, cpan@openstrike.co.uk
 # ORGANIZATION: Openstrike
-#      VERSION: 1.0
+#      VERSION: See $VERSION in code
 #      CREATED: 29/05/18 14:42:12
 #     REVISION: ---
 #===============================================================================
@@ -19,6 +19,8 @@ use strict;
 use warnings;
  
 use parent 'Password::Policy::Exception';
+
+our $VERSION = '0.00';
 
 sub error { return 'This password has been pwned'; }
 

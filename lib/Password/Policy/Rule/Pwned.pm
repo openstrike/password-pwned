@@ -10,7 +10,7 @@
 #        NOTES: https://haveibeenpwned.com/API/v2#PwnedPasswords
 #       AUTHOR: Pete Houston (pete), cpan@openstrike.co.uk
 # ORGANIZATION: Openstrike
-#      VERSION: 1.0
+#      VERSION: See $VERSION in code
 #      CREATED: 29/05/18 14:44:30
 #     REVISION: ---
 #===============================================================================
@@ -75,14 +75,21 @@ against the list from L<api.pwnedpasswords.com>. It uses the recoomended
 range function to ensure that neither the password nor its full hash is
 ever transferred over the wire.
 
+The Password::Policy configuration file should set the "pwned" attribute
+to 1 in any policy where this rule should apply.
+
+=head1 STATUS
+
+B<This is alpha quality software.> It is not yet production ready.
+
 =head1 SEE ALSO
 
 To understand how to use this as part of a wider password policy
-enforcement program, seel L<Password::Policy>.
+enforcement program, see L<Password::Policy>.
 
 =head1 REPOSITORY
 
-L<https://github.com/openstrike/password-pwned>
+L<https://gitlab.com/openstrike/password-pwned>
 
 =head1 MAINTAINER
 

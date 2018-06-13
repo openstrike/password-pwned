@@ -3,11 +3,10 @@ use strict;
 use warnings;
 require 5.6.0;
 
-
 my %MF = (
-	NAME      =>   "Password::Policy::Rule::Pwned",
-	ABSTRACT  =>   "Compare text to known pwned passwords list",
-	AUTHOR    =>   'Pete Houston (cpan@openstrike.co.uk)',
+	NAME            => 'Password::Policy::Rule::Pwned',
+	ABSTRACT        => 'Compare text to known pwned passwords list',
+	AUTHOR          => 'Pete Houston (cpan@openstrike.co.uk)',
 	LICENSE         => 'perl',
 	META_MERGE => {
 		'meta-spec' => { version => 2 },
@@ -17,24 +16,36 @@ my %MF = (
 			},
 			repository => {
 				type => 'git',
-				url  => 'git://github.com/openstrike/password-pwned.git',
-				web  => 'https://github.com/openstrike/password-pwned',
-			}
-		}
+				url  => 'git://gitlab.com/openstrike/password-pwned.git',
+				web  => 'https://gitlab.com/openstrike/password-pwned',
+			},
+		},
+		provides => {
+			'Password::Policy::Rule::Pwned' => {
+				file    => 'lib/Password/Policy/Rule/Pwned.pm'
+			},
+			'Password::Policy::Exception::Pwned' => {
+				file    => 'lib/Password/Policy/Exception/Pwned.pm'
+			},
+		},
+		release_status => 'unstable',
 	},
-	MIN_PERL_VERSION    => '5.6.0',
-	PREREQ_PM       =>  {
-		'LWP' => '6.00',
-		'Digest::SHA' => '0',
+	MIN_PERL_VERSION => '5.6.0',
+	PREREQ_PM        => {
+		'Password::Policy'     => '0.04',
+		'LWP'                  => '6.02',
+		'LWP::Protocol::https' => '6.02',
+		'Digest::SHA'          => '0',
 	},
-	TEST_REQUIRES => {
-		'Test::More'	=> '0',
+	TEST_REQUIRES    => {
+		'Test::More'	  => '0.84',
+		'Test::Exception' => '0.38',
 	},
-	VERSION_FROM    => 'lib/Password/Policy/Rule/Pwned.pm',
-   	'dist'    =>   {
+	VERSION_FROM     => 'lib/Password/Policy/Rule/Pwned.pm',
+	'dist'           => {
 		COMPRESS => 'gzip -9f', 
 		SUFFIX   => 'gz'
-   	}
+	}
 );
 
 if ($ExtUtils::MakeMaker::VERSION lt 6.64) {
@@ -56,5 +67,9 @@ Now do the following to install Password::Policy::Rule::Pwned:
     % make
     % make test
     % make install
+
+Parts of the test suite will call the actual API at
+https://api.pwnedpasswords.com/range/ unless the environment variable
+NO_NETWORK_TESTING is set to a true value.
 
 End_of_Text

@@ -1,7 +1,7 @@
 
 Password::Policy::Rule::Pwned version 0.00
 
-Released: Xth June 2018
+Released: 13th June 2018
 
 
 INSTALLATION
@@ -18,6 +18,10 @@ If you have the CPAN module installed then you can install the module
 from the command line like so:
 
 	$ cpan Password::Policy::Rule::Pwned
+
+Parts of the test suite will call the actual API at
+https://api.pwnedpasswords.com/range/ unless the environment variable
+NO_NETWORK_TESTING is set to a true value.
 
 
 DESCRIPTION
