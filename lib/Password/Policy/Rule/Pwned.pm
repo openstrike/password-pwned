@@ -26,7 +26,7 @@ use Password::Policy::Exception::Pwned;
 use LWP::UserAgent;
 use Digest::SHA 'sha1_hex';
 
-our $VERSION = '0.00';
+our $VERSION = '0.00_01';
 my $ua = __PACKAGE__ . '/' . $VERSION;
 
 sub check {

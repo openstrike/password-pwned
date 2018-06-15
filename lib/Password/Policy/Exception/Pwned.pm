@@ -22,7 +22,7 @@ package Password::Policy::Exception::Pwned;
  
 use parent 'Password::Policy::Exception';
 
-our $VERSION = '0.00';
+our $VERSION = '0.00_01';
 
 sub error { return 'This password has been pwned'; }
 
