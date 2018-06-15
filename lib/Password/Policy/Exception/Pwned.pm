@@ -17,6 +17,8 @@
 
 use strict;
 use warnings;
+
+package Password::Policy::Exception::Pwned;
  
 use parent 'Password::Policy::Exception';
 
