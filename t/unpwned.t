@@ -14,11 +14,12 @@
 
 use strict;
 use warnings;
+use utf8;
 
 use Test::More;
 use Test::Exception;
 use Password::Policy;
-use Password::Policy::Rule::Pwned;
+use Encode 'encode';
 
 my @pw = (
 '#vC9\_=lxh|U%wG[n!Mh`]j#',
@@ -26,6 +27,7 @@ my @pw = (
 q#-qItBY5'gzlBFq8(Y$+ELN'f#,
 'ô1«6é!`®ci²`?©mýDçâ,÷dl½'
 );
+eval { require 5.008; 1; } and push @pw, 'Οὐχὶ ταὐτὰ';
 
 if ($ENV{NO_NETWORK_TESTING}) {
 	plan skip_all => 'NO_NETWORK_TESTING is set'
@@ -35,6 +37,7 @@ if ($ENV{NO_NETWORK_TESTING}) {
 
 my $pp = Password::Policy->new (config => 't/stock.yaml');
 for my $pass (@pw) {
-	lives_and { is $pp->process({ password => $pass }), $pass }
-		"$pass is unpwned"
+	my $encpw = encode ('UTF-8', $pass);
+	lives_and { is $pp->process({ password => $encpw }), $encpw }
+		"$encpw is not pwned"
 }
