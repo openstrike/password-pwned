@@ -27,7 +27,7 @@ use Password::Policy::Exception::PwnedError;
 use LWP::UserAgent;
 use Digest::SHA 'sha1_hex';
 
-our $VERSION = '0.00_01';
+our $VERSION = '0.00_02';
 my $ua = __PACKAGE__ . '/' . $VERSION;
 my $timeout = 5;
 our $base_url = 'https://api.pwnedpasswords.com/range/';

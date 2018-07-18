@@ -1,7 +1,7 @@
 
-Password::Policy::Rule::Pwned version 0.00_01
+Password::Policy::Rule::Pwned version 0.00_02
 
-Released: 15th June 2018
+Released: 18th July 2018
 
 
 INSTALLATION
@@ -38,6 +38,8 @@ change.
 NEW SINCE LAST VERSION
 ----------------------
 
+ - Test suite: utf-8 passwords and new exception tested
+ - New Exception class PwnedError to be thrown when API is down/unreachable
  - Add missing package statement
 
 See the Changes file for a complete history.

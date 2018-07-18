@@ -5,6 +5,7 @@
 \.last_cover_stats
 ^Makefile$
 MANIFEST.*\.bak
+MANIFEST.SKIP
 ^MYMETA\.
 nytprof\.out
 ^pm_to_blib
@@ -13,3 +14,5 @@ nytprof\.out
 \.bs$
 \.tmp$
 \.swp$
+\.gz$
+\.gz\.asc$
