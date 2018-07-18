@@ -23,22 +23,25 @@ package Password::Policy::Rule::Pwned;
 use parent 'Password::Policy::Rule';
 
 use Password::Policy::Exception::Pwned;
+use Password::Policy::Exception::PwnedError;
 use LWP::UserAgent;
 use Digest::SHA 'sha1_hex';
 
 our $VERSION = '0.00_01';
 my $ua = __PACKAGE__ . '/' . $VERSION;
+my $timeout = 5;
+our $base_url = 'https://api.pwnedpasswords.com/range/';
 
 sub check {
 	my $self     = shift;
 	my $password = $self->prepare (shift);
 	my $hash     = uc sha1_hex ($password);
 	my $range    = substr ($hash, 0, 5, '');
-	my $url      = "https://api.pwnedpasswords.com/range/$range";
-	my $res      = LWP::UserAgent->new (agent => $ua)->get ($url);
+	my $url      = $base_url . $range;
+	my $res      = LWP::UserAgent->new (agent => $ua, timeout => $timeout)->get ($url);
 	if ($res->code != 200) {
-		warn "Unexpected HTTP response for $url: " . $res->status_line;
-		return 0;
+		warn $res->status_line;
+		Password::Policy::Exception::PwnedError->throw;
 	}
 	if (index ($res->content, "$hash:") > -1) {
 		Password::Policy::Exception::Pwned->throw;

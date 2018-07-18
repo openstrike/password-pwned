@@ -27,6 +27,9 @@ my %MF = (
 			'Password::Policy::Exception::Pwned' => {
 				file    => 'lib/Password/Policy/Exception/Pwned.pm'
 			},
+			'Password::Policy::Exception::PwnedError' => {
+				file    => 'lib/Password/Policy/Exception/PwnedError.pm'
+			},
 		},
 		release_status => 'unstable',
 	},
@@ -40,6 +43,7 @@ my %MF = (
 	TEST_REQUIRES    => {
 		'Test::More'	  => '0.84',
 		'Test::Exception' => '0.38',
+		'Encode'          => '0',
 	},
 	VERSION_FROM     => 'lib/Password/Policy/Rule/Pwned.pm',
 	'dist'           => {
