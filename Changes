@@ -1,3 +1,9 @@
+0.00_03 2018-07-20
+
+ - More extensive POD
+ - Meta Data has explicit versions of all packages
+ - Set release_status to testing
+
 0.00_02 2018-07-18
 
  - Test suite: utf-8 passwords and new exception tested

@@ -22,4 +22,4 @@ BEGIN {
 	use_ok ('Password::Policy::Rule::Pwned');
 }
 
-is ($Password::Policy::Rule::Pwned::VERSION, '0.00_02', 'Version');
+is ($Password::Policy::Rule::Pwned::VERSION, '0.00_03', 'Version');

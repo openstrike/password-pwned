@@ -3,6 +3,7 @@ use strict;
 use warnings;
 require 5.6.0;
 
+my $release = '0.00_03';
 my %MF = (
 	NAME            => 'Password::Policy::Rule::Pwned',
 	ABSTRACT        => 'Compare text to known pwned passwords list',
@@ -22,16 +23,19 @@ my %MF = (
 		},
 		provides => {
 			'Password::Policy::Rule::Pwned' => {
-				file    => 'lib/Password/Policy/Rule/Pwned.pm'
+				file    => 'lib/Password/Policy/Rule/Pwned.pm',
+				version => $release
 			},
 			'Password::Policy::Exception::Pwned' => {
-				file    => 'lib/Password/Policy/Exception/Pwned.pm'
+				file    => 'lib/Password/Policy/Exception/Pwned.pm',
+				version => $release
 			},
 			'Password::Policy::Exception::PwnedError' => {
-				file    => 'lib/Password/Policy/Exception/PwnedError.pm'
+				file    => 'lib/Password/Policy/Exception/PwnedError.pm',
+				version => $release
 			},
 		},
-		release_status => 'unstable',
+		release_status => 'testing',
 	},
 	MIN_PERL_VERSION => '5.6.0',
 	PREREQ_PM        => {
