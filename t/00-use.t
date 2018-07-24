@@ -15,11 +15,17 @@
 use strict;
 use warnings;
 
-use Test::More tests => 3;
+use Test::More tests => 6;
 
 BEGIN {
 	use_ok ('Password::Policy::Exception::Pwned');
+	use_ok ('Password::Policy::Exception::PwnedError');
 	use_ok ('Password::Policy::Rule::Pwned');
 }
 
-is ($Password::Policy::Rule::Pwned::VERSION, '0.00_03', 'Version');
+my $ver = '0.00_03';
+
+is ($Password::Policy::Rule::Pwned::VERSION, $ver, 'Rule version');
+is ($Password::Policy::Exception::Pwned::VERSION, $ver, 'Pwned version');
+is ($Password::Policy::Exception::PwnedError::VERSION, $ver,
+	'PwnedError version');
