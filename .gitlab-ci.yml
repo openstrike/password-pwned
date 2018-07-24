@@ -2,5 +2,7 @@ before_script:
   - cpan -T Password::Policy LWP Digest::SHA Test::Exception Test::Kwalitee Test::Vars LWP::Protocol::https
 
 default:
+  except:
+    - tags
   script: 
     - perl Makefile.PL && make && make manifest && prove -b t xt/*
