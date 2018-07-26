@@ -1,7 +1,7 @@
 
-Password::Policy::Rule::Pwned version 0.00_03
+Password::Policy::Rule::Pwned version 0.01
 
-Released: 20th July 2018
+Released: 26th July 2018
 
 
 INSTALLATION
@@ -38,9 +38,8 @@ change.
 NEW SINCE LAST VERSION
 ----------------------
 
- - More extensive POD
- - Meta Data has explicit versions of all packages
- - Set release_status to testing
+ - Test versions of all modules
+ - Set release_status from version format
 
 See the Changes file for a complete history.
 

@@ -3,7 +3,7 @@ use strict;
 use warnings;
 require 5.6.0;
 
-my $release = '0.00_03';
+my $release = '0.01';
 my %MF = (
 	NAME            => 'Password::Policy::Rule::Pwned',
 	ABSTRACT        => 'Compare text to known pwned passwords list',
@@ -35,7 +35,6 @@ my %MF = (
 				version => $release
 			},
 		},
-		release_status => 'testing',
 	},
 	MIN_PERL_VERSION => '5.6.0',
 	PREREQ_PM        => {

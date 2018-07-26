@@ -27,7 +27,7 @@ use Password::Policy::Exception::PwnedError;
 use LWP::UserAgent;
 use Digest::SHA 'sha1_hex';
 
-our $VERSION = '0.00_03';
+our $VERSION = '0.01';
 my $ua = __PACKAGE__ . '/' . $VERSION;
 my $timeout = 5;
 our $base_url = 'https://api.pwnedpasswords.com/range/';
@@ -121,12 +121,6 @@ The method will throw a L<Password::Policy::Exception::Pwned> exception
 if the password is pwned. If the API server is unavailable it will warn
 and then throw a L<Password::Policy::Exception::PwnedError> exception. It
 will return true if the password is verifiably not pwned.
-
-=head1 STATUS
-
-B<This is beta quality software.> It has been tested and may be used at
-your own risk. The details of the implementation and interface may yet
-be changed in future releases.
 
 =head1 DATA SOURCE
 

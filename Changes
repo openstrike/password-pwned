@@ -1,3 +1,8 @@
+0.01 2018-07-26
+
+ - Test versions of all modules
+ - Set release_status from version format
+
 0.00_03 2018-07-20
 
  - More extensive POD

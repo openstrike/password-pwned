@@ -27,8 +27,8 @@ my $pp = Password::Policy->new (config => 'policy.yaml');
 while (my $pass = <STDIN>) {
 	chomp $pass;
 	try {
-    	$pp->process({ password => $pass });
+		$pp->process({ password => $pass });
 	} catch {
-    	print "'$pass' failed checks: $_ - don't use it\n";
+		print "'$pass' failed checks: $_ - don't use it\n";
 	};
 }
